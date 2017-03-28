@@ -1,0 +1,42 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# npm
+node_modules/
+node-debug.log
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# vim
+*.swp
+*.swo
+
+# fie init next
+.travis.yml
+.sass-cache/
+mods/.sass-cache/
+
+# web-pages
+data/
+demos/
+src/
+.*
+!.git*
+*.*
+!README.md
