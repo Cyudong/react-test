@@ -4,7 +4,8 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanPlugin = require('clean-webpack-plugin'); //清理文件夹
- 
+var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+var extractCss = new ExtractTextWebpackPlugin("./index.css"); //这里的参数是配置编译后的css路径和文件名,相对于output里的path选项
 module.exports = {
   devtool: 'eval-source-map',
   entry: [
@@ -19,11 +20,13 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new CleanPlugin(['output'], {
-      "root": path.resolve(__dirname, './build'),
+    new CleanPlugin(['./build'], {
+      "root": path.resolve(__dirname),
       verbose: true,
-      dry: false
+      dry: false,
+      "watch": false, // If true, remove files on recompile. (Default: false)
     }),
+    extractCss,
     // new HtmlWebpackPlugin({
     //   template: 'app/index.tpl.html',
     //   inject: 'body',
@@ -34,7 +37,7 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    }),
   ],
   eslint: {
     configFile: '.eslintrc',
@@ -61,8 +64,9 @@ module.exports = {
         loader: 'json'
       },
       {
-        test: /\.scss$/,
-        loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass'
+        test:/\.scss$/,
+        loader:extractCss.extract([ 'css-loader', 'postcss-loader', 'sass-loader' ]),
+        //loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass'
       },
       { test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
       { test: /\.(ttf|eot|svg)(\?[a-z0-9#=&.]+)?$/, loader: 'file' }
