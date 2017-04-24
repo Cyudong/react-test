@@ -1,11 +1,12 @@
 import React from 'react';
+import { branch } from 'baobab-react/higher-order';
 // import _ from 'lodash';
 
 const { Component } = React;
 
-export default class Table extends Component {
-
+class Table extends Component {
     render() {
+        console.log(this.props.colors);
         return (<div className="html-lable-study">
             <table className="table">
                 <thead>
@@ -137,3 +138,9 @@ export default class Table extends Component {
         </div>);
     }
 }
+
+// Branching the component by mapping the desired data to cursors
+export default branch({
+    colors: ['colors']
+}, Table);
+// export default Table;
