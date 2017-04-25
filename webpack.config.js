@@ -12,7 +12,7 @@ module.exports = {
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
     'react-hot-loader/patch',
-    path.resolve(__dirname, './Views/index.js')
+    path.resolve(__dirname, './index.js')
   ],
   output: {
     path: path.resolve(__dirname, './build'),

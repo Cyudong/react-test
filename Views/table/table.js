@@ -141,6 +141,6 @@ class Table extends Component {
 
 // Branching the component by mapping the desired data to cursors
 export default branch({
-    colors: ['colors']
+    table: ['views','table']
 }, Table);
 // export default Table;

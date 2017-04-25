@@ -1,4 +1,39 @@
 .react-test-page {
+    .list-page {
+        dl {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            border-left: 1px solid #333;
+            border-right: 1px solid #333;
+            border-top: 1px solid #333;
+            margin: 0px;
+            dt {
+                flex: auto;
+                margin: 0px;
+                padding: 10px 0px;
+                border-right: 1px solid #333;
+                text-align: center;
+            }
+            dt:last-child {
+                border-right: none;
+            }
+            dd {
+                flex: auto;
+                margin: 0px;
+                padding: 10px 0px;
+                border-right: 1px solid #333;
+                text-align: center;
+                font-weight: 300;
+            }
+            dd:last-child {
+                border-right: none;
+            }
+        }
+        dl:last-child {
+            border-bottom: 1px solid #333;
+        }
+    }
     .html-lable-study {
         .table {
             border: 1px;
