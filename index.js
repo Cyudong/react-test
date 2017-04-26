@@ -9,7 +9,6 @@ import Views from './Views/index.js';
 const { Component } = React;
 
 class App extends Component {
-
     render() {
         return (<div className="react-test-page">
             <Views />

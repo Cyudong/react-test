@@ -4,25 +4,28 @@
             display: flex;
             flex-wrap: nowrap;
             justify-content: space-between;
-            border-left: 1px solid #333;
-            border-right: 1px solid #333;
-            border-top: 1px solid #333;
+            border-left: 1px solid #999;
+            border-right: 1px solid #999;
+            border-top: 1px solid #999;
+            border-radius: 3px;
             margin: 0px;
             dt {
+                width: 20%;
                 flex: auto;
                 margin: 0px;
                 padding: 10px 0px;
-                border-right: 1px solid #333;
+                border-right: 1px solid #999;
                 text-align: center;
             }
             dt:last-child {
                 border-right: none;
             }
             dd {
+                width: 20%;
                 flex: auto;
                 margin: 0px;
                 padding: 10px 0px;
-                border-right: 1px solid #333;
+                border-right: 1px solid #999;
                 text-align: center;
                 font-weight: 300;
             }
@@ -31,7 +34,7 @@
             }
         }
         dl:last-child {
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #999;
         }
     }
     .html-lable-study {

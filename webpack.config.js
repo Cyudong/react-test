@@ -45,24 +45,25 @@ module.exports = {
     failOnError: false
   },
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint'
-      }
-    ],
+    // preLoaders: [
+    //   {
+    //     test: /\.js$/,
+    //     exclude: /node_modules/,
+    //     loader: 'eslint'
+    //   }
+    // ],
     loaders: [
       {
-        test: /\.jsx$/,
+        // test: /\.jsx?$/,
+        test: /\.js|jsx$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {presets: ['es2015', 'react'] }
       },
       {
-                test: /\.json$/,
-                loader: 'json!strip-json-comments'
-            },
+        test: /\.json$/,
+        loader: 'json!strip-json-comments'
+      },
       {
         test:/\.scss$/,
         loader:extractCss.extract([ 'css-loader', 'postcss-loader', 'sass-loader' ]),
