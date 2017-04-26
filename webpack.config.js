@@ -54,15 +54,15 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {presets: ['es2015', 'react'] }
       },
       {
-        test: /\.json?$/,
-        loader: 'json'
-      },
+                test: /\.json$/,
+                loader: 'json!strip-json-comments'
+            },
       {
         test:/\.scss$/,
         loader:extractCss.extract([ 'css-loader', 'postcss-loader', 'sass-loader' ]),

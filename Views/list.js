@@ -6,9 +6,15 @@ import _ from 'lodash';
 const { Component, PropTypes } = React;
 
 export default class List extends Component {
+
     // static propTypes = {
-    //     dataSource: PropTypes.array.isRequired,
+    //     dataSource: PropTypes.array
     // }
+
+    // static defaultProps = {
+    //     dataSource: []
+    // }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -49,7 +55,7 @@ export default class List extends Component {
                     listInfo.map((config) => {                        
                         return (<dt key={config.title}>{config.title}</dt>);
                     })
-                }
+                }   
             </dl>
             {
                 dataSource.map((data) => {
