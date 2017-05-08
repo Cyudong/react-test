@@ -8,7 +8,7 @@ const tree = new Baobab({
                 name: '苹果',
                 code: '0101',
                 desc: '又脆又甜',
-                isSale: 0,            
+                isSale: 1,            
                 shopList: [
                     {
                         shopId: '101',
@@ -36,7 +36,7 @@ const tree = new Baobab({
                 name: '梨',
                 code: '0103',
                 desc: '个大，脆，甜',
-                isSale: 0,            
+                isSale: 1,            
                 shopList: [
                     {
                         shopId: '101',
@@ -50,7 +50,7 @@ const tree = new Baobab({
                 name: '香蕉',
                 code: '0104',
                 desc: '海南特产',
-                isSale: 0,            
+                isSale: 1,            
                 shopList: [
                     {
                         shopId: '101',
@@ -87,7 +87,8 @@ const tree = new Baobab({
                 ]
             }
         ]
-    }
+    },
+    searchArea: {}
 });
 
 export default tree;
