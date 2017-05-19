@@ -62,7 +62,7 @@ export default class List extends Component {
                     return (<dl key={data.code}>
                         {
                             listInfo.map((config) => {
-                                return (<dd key={config.dataIndex}>{data[config.dataIndex]}</dd>);
+                                return (<dd key={config.dataIndex}>{config.cell ? config.cell(config.dataIndex, data) : data[config.dataIndex]}</dd>);
                             })
                         }
                     </dl>);

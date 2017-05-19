@@ -12,6 +12,13 @@ import List from './list.js';
 const { Component } = React;
 
 class Index extends Component {
+    saleRender(dataIndex, record){
+        let isSale = {
+            '0': '下架',
+            '1': '热卖中'
+        };
+        return (<span>{isSale[record[dataIndex]]}</span>);
+    }
 
     render() {
         const { views } = this.props;
@@ -22,7 +29,7 @@ class Index extends Component {
                 <column title="商品名称" dataIndex="name" ></column>
                 <column title="商品编码" dataIndex="code" ></column>
                 <column title="商品描述" dataIndex="desc" ></column>
-                <column title="是否可售" dataIndex="isSale" cell=""></column>
+                <column title="是否可售" dataIndex="isSale" cell={this.saleRender}></column>
             </List>
         </div>);
     }
