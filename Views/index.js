@@ -6,8 +6,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { branch } from 'baobab-react/higher-order';
 import _ from 'lodash';
-// import Table from './table/table.js';
-import List from './list.js';
+import SearchArea from './searchArea/index.js';
+import List from './table/index.js';
 
 const { Component } = React;
 
@@ -24,7 +24,7 @@ class Index extends Component {
         const { views } = this.props;
 
         return (<div className="react-test-page">
-            {/* <Table /> */}
+            <SearchArea />
             <List dataSource={views.list} >
                 <column title="商品名称" dataIndex="name" ></column>
                 <column title="商品编码" dataIndex="code" ></column>

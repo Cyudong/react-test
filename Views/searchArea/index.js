@@ -22,7 +22,7 @@ export default class searchArea extends Component {
     render() {
 
         return (<div className="search-area">            
-            
+            <input type="button" className="btn" value="查询" />
         </div>);
     }
 }

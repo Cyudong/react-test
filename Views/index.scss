@@ -1,4 +1,10 @@
 .react-test-page {
+    .search-area {
+        .btn {
+            padding: 2px 10px;
+            background-color: #fff;
+        }
+    }
     .list-page {
         dl {
             display: flex;
