@@ -1,8 +1,16 @@
 .react-test-page {
     .search-area {
+        margin-bottom: 20px;
         .btn {
-            padding: 2px 10px;
+            padding: 5px 15px;
             background-color: #fff;
+            border: 1px solid #999;
+            border-radius: 2px;
+        }
+        .btn:hover {
+            border-color: #D1E8FE;
+            background-color: #D1E8FE;
+            color: #30A9EF;
         }
     }
     .list-page {
