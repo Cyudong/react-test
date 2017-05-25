@@ -88,7 +88,22 @@ const tree = new Baobab({
             }
         ]
     },
-    searchArea: {}
+    searchArea: {
+        checkbox: [
+            {
+                label: '苹果',
+                value: 1
+            },
+            {
+                label: '橘子',
+                value: 2
+            },
+            {
+                label: '榴莲',
+                value: 3
+            }
+        ]
+    }
 });
 
 export default tree;

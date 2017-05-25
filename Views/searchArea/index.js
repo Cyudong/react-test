@@ -2,27 +2,35 @@
 
 import React from 'react';
 import _ from 'lodash';
+import { branch } from 'baobab-react/higher-order';
+import { Checkbox, Radio } from '../common/index.js';
 
 const { Component, PropTypes } = React;
 
-export default class searchArea extends Component {
-
-    // static propTypes = {
-    //     dataSource: PropTypes.array
-    // }
-
-    // static defaultProps = {
-    //     dataSource: []
-    // }
+class searchArea extends Component {    
 
     constructor(props) {
         super(props);
     }
 
     render() {
+        const { searchArea } = this.props;
 
-        return (<div className="search-area">            
+        return (<div className="search-area">
+            <Checkbox dataSource={searchArea.checkbox} />    
+            <Radio dataSource={searchArea.checkbox} />   
+            
+            <select name="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
             <input type="button" className="btn" value="查询" />
         </div>);
     }
 }
+
+export default branch({
+    searchArea: ['searchArea']
+}, searchArea);
