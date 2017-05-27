@@ -60,7 +60,7 @@ export default class tree extends Component {
     render() {        
 
         let dataSource = this.state.dataSource;
-        console.log(dataSource);
+        // console.log(dataSource);
         return (<div className="radio">
             {
                 dataSource.map((child,index) => {
