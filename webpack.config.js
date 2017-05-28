@@ -5,6 +5,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanPlugin = require('clean-webpack-plugin'); //清理文件夹
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var extractCss = new ExtractTextWebpackPlugin("./index.css"); //这里的参数是配置编译后的css路径和文件名,相对于output里的path选项
 module.exports = {
   devtool: 'eval-source-map',
@@ -32,6 +34,14 @@ module.exports = {
     //   inject: 'body',
     //   filename: 'index.html'
     // }),
+    new UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
+    }),
+    new OpenBrowserPlugin({
+        url: 'http://localhost:3000/index.html'
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
@@ -58,7 +68,7 @@ module.exports = {
         test: /\.js|jsx$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        query: {presets: ['es2015', 'react'] }
+        query: {presets: ['es2015', 'react', 'stage-0'] }
       },
       {
         test: /\.json$/,

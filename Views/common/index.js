@@ -1,20 +1,11 @@
 'use strict';
 
-import React from 'react';
-import _ from 'lodash';
+import Checkbox from './checkbox.js';
+import Radio from './radio.js';
+import TreeSelect from './treeSelect.js';
 
-const { Component, PropTypes } = React;
-
-export default class common extends Component {
-    
-    constructor(props) {
-        super(props);        
-    }    
-
-    render() {        
-
-        return (<div className="common-page">            
-            
-        </div>);
-    }
+export {
+    Checkbox,
+    Radio,
+    TreeSelect
 }
