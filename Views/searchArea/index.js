@@ -3,7 +3,7 @@
 import React from 'react';
 import _ from 'lodash';
 import { branch } from 'baobab-react/higher-order';
-import { Checkbox, Radio } from '../common/index.js';
+import { Checkbox, Radio, Select } from '../common/index.js';
 
 const { Component, PropTypes } = React;
 
@@ -19,6 +19,7 @@ class searchArea extends Component {
         return (<div className="search-area">
             <Checkbox dataSource={searchArea.checkbox} />    
             <Radio dataSource={searchArea.checkbox} />   
+            <Select dataSource={searchArea.checkbox} />   
             
             <select name="cars">
                 <option value="volvo">Volvo</option>
